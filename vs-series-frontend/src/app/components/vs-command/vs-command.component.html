@@ -1,0 +1,35 @@
+@if (contributedNode) {
+    <div class="inline-component">
+        <ur-dialog-input
+            type="text"
+            keyboardLayout="alpha-numeric"
+            [attr.data-testid]="'vs_command'"
+            [label]="'presenter.vs-command.label.command' | translate"
+            [value]="contributedNode.parameters.command"
+            [placeholder]="'presenter.vs-command.placeholder.command' | translate"
+            [validators]="commandValidators"
+            [validation]="{ required: true }"
+            (valueChanged)="saveCommand($event)"
+        >
+        </ur-dialog-input>
+
+        <hr class="vertical" />
+
+        <ur-checkbox
+            [attr.data-testid]="'vs_command_wait'"
+            [label]="'presenter.vs-command.label.wait_for_reply' | translate"
+            [checked]="contributedNode.parameters.waitForReply"
+            (handleChange)="toggleWaitForReply()"
+        >
+        </ur-checkbox>
+
+        <ur-icon-button
+            icon="info"
+            size="small"
+            [attr.data-testid]="'vs_command_info'"
+            [attr.aria-label]="'presenter.vs-command.action.show_info' | translate"
+            (clicked)="openInfoDialog('presenter.vs-command.info.title', 'presenter.vs-command.info.text')"
+        >
+        </ur-icon-button>
+    </div>
+}

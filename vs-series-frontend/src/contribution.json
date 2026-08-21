@@ -1,0 +1,54 @@
+{
+  "applicationNodes": [ 
+    {
+      "translationPath": "assets/i18n/",
+      "behaviorURI": "vs-application.worker.js",
+      "presenterURI": "main.js",
+      "componentTagName": "keyence-vs-series-vs-application"
+    }
+    ],
+  "programNodes": [ 
+    {
+      "excludeFromToolbox": false,
+      "translationPath": "assets/i18n/",
+      "iconURI": "assets/icons/vs-series.svg",
+      "behaviorURI": "vs-connect.worker.js",
+      "presenterURI": "main.js",
+      "componentTagName": "keyence-vs-series-vs-connect"
+    },
+    {
+      "excludeFromToolbox": false,
+      "translationPath": "assets/i18n/",
+      "iconURI": "assets/icons/vs-series.svg",
+      "behaviorURI": "vs-disconnect.worker.js",
+      "presenterURI": "main.js",
+      "componentTagName": "keyence-vs-series-vs-disconnect"
+    },
+    {
+      "excludeFromToolbox": false,
+      "translationPath": "assets/i18n/",
+      "iconURI": "assets/icons/vs-series.svg",
+      "behaviorURI": "vs-command.worker.js",
+      "presenterURI": "main.js",
+      "componentTagName": "keyence-vs-series-vs-command"
+    },
+    {
+      "excludeFromToolbox": false,
+      "translationPath": "assets/i18n/",
+      "iconURI": "assets/icons/vs-series.svg",
+      "behaviorURI": "vs-update-position.worker.js",
+      "presenterURI": "main.js",
+      "componentTagName": "keyence-vs-series-vs-update-position"
+    }],
+  "smartSkills": [],
+  "sidebarItems": [ 
+    {
+      "name": "keyence-vs-series-vs-sidebar",
+      "iconURI": "assets/icons/vs-series.svg",
+      "presenterURI": "main.js",
+      "componentTagName": "keyence-vs-series-vs-sidebar",
+      "behaviorURI": "vs-sidebar.worker.js",
+      "translationPath": "assets/i18n/"
+    }],
+  "operatorScreens": []
+}

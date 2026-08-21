@@ -1,0 +1,14 @@
+@if (contributedNode) {
+    <div class="inline-component">
+        <ur-field-trigger
+            icon="info"
+            [attr.data-testid]="'vs_disconnect_address'"
+            [label]="'presenter.vs-disconnect.label.address' | translate"
+            [value]="address"
+            [placeholder]="'presenter.vs-disconnect.placeholder.address' | translate"
+            [valid]="!!address"
+            (clicked)="openInfoDialog('presenter.vs-disconnect.info.title', 'presenter.vs-disconnect.info.text')"
+        >
+        </ur-field-trigger>
+    </div>
+}

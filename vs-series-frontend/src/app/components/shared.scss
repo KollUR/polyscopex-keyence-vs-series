@@ -1,0 +1,22 @@
+/**
+ * PolyScope X gives a program node presenter a single row, so every VS node
+ * lays its controls out horizontally instead of stacking them. Mirrors the
+ * `.inline-component` contract used by the built-in nodes in the SDK samples.
+ */
+.inline-component {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    gap: var(--spacing-03);
+
+    ur-dialog-input,
+    ur-dialog-number-input,
+    ur-field-trigger {
+        min-width: var(--field-min-width, 144px);
+        max-width: var(--field-max-width, 240px);
+    }
+
+    ur-checkbox {
+        white-space: nowrap;
+    }
+}

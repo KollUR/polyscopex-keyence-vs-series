@@ -1,0 +1,8 @@
+@use '../shared';
+
+.inline-component {
+    // The command payload is the primary field, so let it use the full width.
+    ur-dialog-input {
+        --field-max-width: 280px;
+    }
+}

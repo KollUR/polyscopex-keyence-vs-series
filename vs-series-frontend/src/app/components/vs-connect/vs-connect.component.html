@@ -1,0 +1,22 @@
+@if (contributedNode) {
+    <div class="inline-component">
+        <ur-label
+            [attr.data-testid]="'vs_connect_address'"
+            [label]="
+                ('presenter.vs-connect.label.address' | translate) +
+                ' ' +
+                (address || ('presenter.vs-connect.placeholder.address' | translate))
+            "
+        >
+        </ur-label>
+
+        <ur-icon-button
+            icon="info"
+            size="small"
+            [attr.data-testid]="'vs_connect_info'"
+            [attr.aria-label]="'presenter.vs-connect.action.show_info' | translate"
+            (clicked)="openInfoDialog('presenter.vs-connect.info.title', 'presenter.vs-connect.info.text')"
+        >
+        </ur-icon-button>
+    </div>
+}

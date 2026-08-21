@@ -1,0 +1,22 @@
+metadata:
+  vendorID: "keyence"
+  urcapID: "vs-series"
+  vendorName: "KEYENCE"
+  urcapName: "VS Series"
+  version: 0.1.0
+  description: "Connects PolyScope X to a KEYENCE VS Series vision sensor over CR-terminated ASCII TCP."
+  licenseType: "proprietary"
+artifacts:
+  webArchives:
+  - id: "vs-series-frontend"
+    folder: "vs-series-frontend"
+    devUrl: http://host.gateway.ip:4200/
+
+  containers:
+  - id: "vs-series-backend"
+    image: "vs-series-backend:latest"
+    ingress:
+    - id: rest-api
+      containerPort: 5000
+      protocol: http
+      proxyUrl: /

@@ -1,0 +1,11 @@
+<section class="component">
+    <ur-heading size="medium">{{ 'sidebar-items.keyence-vs-series-vs-sidebar.title' | translate }}</ur-heading>
+
+    <div class="status">
+        <ur-tag [type]="reachabilityTagType" [label]="reachabilityLabel" [attr.data-testid]="'vs_sidebar_reachability'"> </ur-tag>
+    </div>
+
+    @if (address) {
+        <span class="ur-font-body-small color-font-secondary">{{ address }}</span>
+    }
+</section>

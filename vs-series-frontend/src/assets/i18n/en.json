@@ -1,0 +1,147 @@
+{
+    "application": {
+        "nodes": {
+            "keyence-vs-series-vs-application": {
+                "title": "VS Series",
+                "supportiveText": "Connection settings for the KEYENCE VS Series vision sensor"
+            }
+        }
+    },
+    "program": {
+        "tree": {
+            "nodes": {
+                "keyence-vs-series-vs-connect": "VS Connect",
+                "keyence-vs-series-vs-disconnect": "VS Disconnect",
+                "keyence-vs-series-vs-command": "VS Command",
+                "keyence-vs-series-vs-update-position": "VS Update Position"
+            }
+        }
+    },
+    "program-node-labels": {
+        "vs-connect": {
+            "nodeTitle": "VS Connect",
+            "addressValue": "{{ address }}"
+        },
+        "vs-disconnect": {
+            "nodeTitle": "VS Disconnect",
+            "addressValue": "{{ address }}"
+        },
+        "vs-command": {
+            "nodeTitle": "VS Command",
+            "commandValue": "{{ command }}"
+        },
+        "vs-update-position": {
+            "nodeTitle": "VS Update Position",
+            "toolValue": "Tool {{ toolNo }}"
+        }
+    },
+    "presenter": {
+        "vs-application": {
+            "heading": {
+                "connection": "Connection",
+                "teach_time": "Reachability",
+                "calibration": "Calibration"
+            },
+            "label": {
+                "ip_address": "IP address",
+                "port": "Port",
+                "reachability": "Status"
+            },
+            "status": {
+                "reachable": "Reachable",
+                "unreachable": "Unreachable",
+                "unknown": "Not checked"
+            },
+            "action": {
+                "test": "Test",
+                "calibration_connect": "Connect",
+                "calibration_disconnect": "Disconnect"
+            },
+            "hint": {
+                "calibration": "Opens a teach-time connection for calibration in VS Creator. The robot does not move."
+            },
+            "message": {
+                "test_succeeded": "Reachable at {{ address }}",
+                "test_failed": "Unreachable: {{ reason }}",
+                "calibration_connected": "Calibration connection open",
+                "calibration_disconnected": "Calibration connection closed",
+                "calibration_failed": "Could not open the calibration connection: {{ reason }}"
+            },
+            "validator": {
+                "invalid_ip_address": "Enter four numbers between 0 and 255, separated by dots",
+                "invalid_port": "Enter a port between 1 and 65535"
+            }
+        },
+        "vs-connect": {
+            "label": {
+                "address": "VS Series Connect: "
+            },
+            "placeholder": {
+                "address": "Not set"
+            },
+            "action": {
+                "show_info": "About VS Connect"
+            },
+            "info": {
+                "title": "VS Connect",
+                "text": "Opens the runtime connection using the IP address and port from the VS Series application settings. Change the address there to retarget every program. The program stops if the VS Series does not answer."
+            }
+        },
+        "vs-disconnect": {
+            "label": {
+                "address": "VS Series Disconnect:"
+            },
+            "placeholder": {
+                "address": "Not set"
+            },
+            "info": {
+                "title": "VS Disconnect",
+                "text": "Closes the runtime connection to the VS Series shown here. The address comes from the VS Series application settings."
+            }
+        },
+        "vs-command": {
+            "label": {
+                "command": "Command",
+                "wait_for_reply": "Wait for reply"
+            },
+            "placeholder": {
+                "command": "For example TRG"
+            },
+            "action": {
+                "show_info": "About VS Command"
+            },
+            "info": {
+                "title": "VS Command",
+                "text": "Sends one ASCII command to the VS Series. A carriage return is appended automatically, so type the payload only. With Wait for reply on, the program waits for the answer and keeps it in VS_LastReply."
+            },
+            "validator": {
+                "command_required": "Enter a command"
+            }
+        },
+        "vs-update-position": {
+            "label": {
+                "tool_no": "Tool number"
+            },
+            "action": {
+                "show_info": "About VS Update Position"
+            },
+            "info": {
+                "title": "VS Update Position",
+                "text": "Registers the current TCP pose with the VS Series as the image-capture position, stored against the tool number shown here."
+            },
+            "validator": {
+                "invalid_tool_no": "Enter a whole number of 0 or more"
+            }
+        }
+    },
+    "sidebar-items": {
+        "keyence-vs-series-vs-sidebar": {
+            "title": "VS Series",
+            "status": {
+                "reachable": "Reachable",
+                "unreachable": "Unreachable",
+                "unknown": "Not checked"
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@if (contributedNode) {
+    <div class="inline-component">
+        <ur-dialog-input
+            type="number"
+            keyboardLayout="numeric-fixed-positive"
+            [attr.data-testid]="'vs_tool_no'"
+            [label]="'presenter.vs-update-position.label.tool_no' | translate"
+            [value]="contributedNode.parameters.toolNo.toString()"
+            [positiveDigitsOnly]="true"
+            [precision]="0"
+            [validators]="toolNoValidators"
+            [validation]="{ required: true, min: 0 }"
+            (valueChanged)="saveToolNo($event)"
+        >
+        </ur-dialog-input>
+
+        <ur-icon-button
+            icon="info"
+            size="small"
+            [attr.data-testid]="'vs_update_position_info'"
+            [attr.aria-label]="'presenter.vs-update-position.action.show_info' | translate"
+            (clicked)="openInfoDialog('presenter.vs-update-position.info.title', 'presenter.vs-update-position.info.text')"
+        >
+        </ur-icon-button>
+    </div>
+}

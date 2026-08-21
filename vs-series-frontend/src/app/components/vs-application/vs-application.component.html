@@ -1,0 +1,82 @@
+<div *ngIf="applicationNode" class="component">
+    <section class="section">
+        <ur-heading size="medium">{{ 'presenter.vs-application.heading.connection' | translate }}</ur-heading>
+
+        <div class="fields">
+            <ur-input
+                id="vs-ip-address"
+                [attr.data-testid]="'vs_ip_address'"
+                [label]="'presenter.vs-application.label.ip_address' | translate"
+                [value]="applicationNode.ipAddress"
+                [validators]="ipAddressValidators"
+                (valueChanged)="saveIpAddress($event)"
+            >
+            </ur-input>
+
+            <ur-input
+                id="vs-port"
+                [attr.data-testid]="'vs_port'"
+                [type]="'number'"
+                [label]="'presenter.vs-application.label.port' | translate"
+                [value]="applicationNode.port.toString()"
+                [validators]="portValidators"
+                (valueChanged)="savePort($event)"
+            >
+            </ur-input>
+        </div>
+    </section>
+
+    <section class="section">
+        <ur-heading size="medium">{{ 'presenter.vs-application.heading.teach_time' | translate }}</ur-heading>
+
+        <div class="status">
+            <span class="ur-font-body-small color-font-secondary">
+                {{ 'presenter.vs-application.label.reachability' | translate }}
+            </span>
+            <ur-tag [type]="reachabilityTagType" [label]="reachabilityLabel" [attr.data-testid]="'vs_reachability'"> </ur-tag>
+        </div>
+
+        <div class="actions">
+            <ur-button
+                [attr.data-testid]="'vs_test_btn'"
+                [type]="'cta'"
+                [disabled]="busy"
+                (handleClick)="test()"
+            >
+                {{ 'presenter.vs-application.action.test' | translate }}
+            </ur-button>
+        </div>
+    </section>
+
+    <section class="section">
+        <ur-heading size="medium">{{ 'presenter.vs-application.heading.calibration' | translate }}</ur-heading>
+
+        <p class="ur-font-body-small color-font-secondary">
+            {{ 'presenter.vs-application.hint.calibration' | translate }}
+        </p>
+
+        <div class="actions">
+            <ur-button
+                [attr.data-testid]="'vs_calibration_connect_btn'"
+                [type]="'cta'"
+                [disabled]="busy || teachTimeConnected"
+                (handleClick)="calibrationConnect()"
+            >
+                {{ 'presenter.vs-application.action.calibration_connect' | translate }}
+            </ur-button>
+
+            <ur-button
+                [attr.data-testid]="'vs_calibration_disconnect_btn'"
+                [type]="'filled'"
+                [disabled]="busy || !teachTimeConnected"
+                (handleClick)="calibrationDisconnect()"
+            >
+                {{ 'presenter.vs-application.action.calibration_disconnect' | translate }}
+            </ur-button>
+        </div>
+    </section>
+
+    <section class="section" *ngIf="lastTestMessage">
+        <span class="ur-font-body-small" [attr.data-testid]="'vs_last_message'">{{ lastTestMessage }}</span>
+    </section>
+</div>
