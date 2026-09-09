@@ -102,20 +102,29 @@
         "vs-command": {
             "label": {
                 "command": "Command",
+                "variable": "Variable",
                 "wait_for_reply": "Wait for reply"
             },
             "placeholder": {
-                "command": "For example TRG"
+                "command": "For example TRG",
+                "variable": "- Select -"
             },
             "action": {
-                "show_info": "About VS Command"
+                "show_info": "About VS Command",
+                "add_variable": "Add variable"
+            },
+            "error": {
+                "create_variable": "Could not create variable: {{ message }}"
             },
             "info": {
                 "title": "VS Command",
                 "text": "Sends one ASCII command to the VS Series. A carriage return is appended automatically, so type the payload only. With Wait for reply on, the program waits for the answer and keeps it in VS_LastReply."
             },
             "validator": {
-                "command_required": "Enter a command"
+                "command_required": "Enter a command",
+                "variable_required": "Enter a variable name",
+                "variable_name_invalid": "Use letters, numbers, and underscores; start with a letter",
+                "variable_name_exists": "A variable with this name already exists"
             }
         },
         "vs-update-position": {

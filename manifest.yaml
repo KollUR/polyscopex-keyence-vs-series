@@ -3,7 +3,7 @@ metadata:
   urcapID: "vs-series"
   vendorName: "KEYENCE"
   urcapName: "VS Series"
-  version: 0.1.0
+  version: 0.1.2
   description: "Connects PolyScope X to a KEYENCE VS Series vision sensor over CR-terminated ASCII TCP."
   licenseType: "proprietary"
 artifacts:

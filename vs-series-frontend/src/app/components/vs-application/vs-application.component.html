@@ -33,12 +33,11 @@
             <span class="ur-font-body-small color-font-secondary">
                 {{ 'presenter.vs-application.label.reachability' | translate }}
             </span>
-            <ur-tag [type]="reachabilityTagType" [label]="reachabilityLabel" [attr.data-testid]="'vs_reachability'"> </ur-tag>
+            <!-- <ur-tag [type]="reachabilityTagType" [label]="reachabilityLabel" [attr.data-testid]="'vs_reachability'"> </ur-tag> -->
         </div>
 
         <div class="actions">
             <ur-button
-                [attr.data-testid]="'vs_test_btn'"
                 [type]="'cta'"
                 [disabled]="busy"
                 (handleClick)="test()"
@@ -57,7 +56,6 @@
 
         <div class="actions">
             <ur-button
-                [attr.data-testid]="'vs_calibration_connect_btn'"
                 [type]="'cta'"
                 [disabled]="busy || teachTimeConnected"
                 (handleClick)="calibrationConnect()"
@@ -66,7 +64,6 @@
             </ur-button>
 
             <ur-button
-                [attr.data-testid]="'vs_calibration_disconnect_btn'"
                 [type]="'filled'"
                 [disabled]="busy || !teachTimeConnected"
                 (handleClick)="calibrationDisconnect()"
@@ -77,6 +74,6 @@
     </section>
 
     <section class="section" *ngIf="lastTestMessage">
-        <span class="ur-font-body-small" [attr.data-testid]="'vs_last_message'">{{ lastTestMessage }}</span>
+        <span class="ur-font-body-small">{{ lastTestMessage }}</span>
     </section>
 </div>

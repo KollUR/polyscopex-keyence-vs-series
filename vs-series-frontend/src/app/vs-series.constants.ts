@@ -1,4 +1,3 @@
-/** Identifiers that must agree with manifest.yaml and contribution.json. */
 export const VS_APPLICATION_NODE_TYPE = 'keyence-vs-series-vs-application';
 export const VS_BACKEND_CONTAINER_ID = 'vs-series-backend';
 export const VS_BACKEND_INGRESS_ID = 'rest-api';

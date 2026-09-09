@@ -11,7 +11,8 @@
 
     ur-dialog-input,
     ur-dialog-number-input,
-    ur-field-trigger {
+    ur-field-trigger,
+    ur-dropdown {
         min-width: var(--field-min-width, 144px);
         max-width: var(--field-max-width, 240px);
     }

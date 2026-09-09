@@ -23,6 +23,27 @@
         >
         </ur-checkbox>
 
+        <ur-dropdown
+            [numberOfOptionsVisible]="4"
+            [options]="variableOptions"
+            [enableAddition]="false"
+            [label]="'presenter.vs-command.label.variable' | translate"
+            [labelOutside]="false"
+            [clearable]="false"
+            [allowsOptionCreation]="true"
+            [createLabel]="'presenter.vs-command.action.add_variable' | translate"
+            [createLabelIcon]="'plus'"
+            [createValue]="''"
+            [validators]="variableValidators"
+            [required]="false"
+            [placeholder]="'presenter.vs-command.placeholder.variable' | translate"
+            [selectedOption]="selectedVariableOption"
+            [disabled]="!contributedNode.parameters.waitForReply"
+            [attr.data-testid]="'vs_command_variable'"
+            (selectionChange)="onVariableSelectionChange($event)"
+            (optionAdd)="onVariableOptionAdd($event)"
+        ></ur-dropdown>
+
         <ur-icon-button
             icon="info"
             size="small"
