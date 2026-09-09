@@ -68,14 +68,15 @@ export class VsSidebarComponent implements SignalSidebarItemPresenter, OnDestroy
         }
     }
 
-    get reachabilityTagType(): 'positive' | 'negative' | 'neutral' {
+    /** Mapped for ur-helper-message (ur-tag is not available in UI components 21.3.x). */
+    get reachabilityMessageType(): 'success' | 'error' | 'info' {
         switch (this.reachability) {
             case 'reachable':
-                return 'positive';
+                return 'success';
             case 'unreachable':
-                return 'negative';
+                return 'error';
             default:
-                return 'neutral';
+                return 'info';
         }
     }
 

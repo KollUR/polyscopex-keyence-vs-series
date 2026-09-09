@@ -2,8 +2,13 @@
 
 # dependencies
 node_modules/
+vs-series-frontend/node_modules/
+vs-series-backend/node_modules/
 npm/
 node/
+package-lock.json
+vs-series-frontend/package-lock.json
+vs-series-backend/package-lock.json
 
 # compiled output
 dist/
